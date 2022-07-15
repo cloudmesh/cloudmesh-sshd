@@ -37,19 +37,19 @@ class SshdCommand(PluginCommand):
                 returns "running" when it runs. otherwise "error"
 
         """
-        # from clousmesh.sshd.sshd import Sshd
-        # sshd = Sshd()
+        from cloudmesh.sshd.sshd import Sshd
+        sshd = Sshd()
 
         if arguments.start:
             Console.ok("Starting...")
-            raise NotImplementedError
+            sshd.start()
 
         elif arguments.stop:
-            Console.ok("Stoping...")
-            raise NotImplementedError
+            Console.ok("Stopping...")
+            sshd.stop()
 
         elif arguments.status:
-            raise NotImplementedError
+            print(sshd.status())
 
 
         return ""
